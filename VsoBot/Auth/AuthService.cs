@@ -25,7 +25,7 @@ namespace VsoBot.Auth
                 var stateClient = currentActivity.GetStateClient();
                 var userData = await stateClient.BotState.GetUserDataAsync(currentActivity.ChannelId, currentActivity.From.Id);
                 userData.SetProperty<string>(PATKey, creds.Token);
-                await stateClient.BotState.SetUserDataAsync(currentActivity.ChannelId, currentActivity.From.Id, userData);
+                // await stateClient.BotState.SetUserDataAsync(currentActivity.ChannelId, currentActivity.From.Id, userData);
                 result = true;
             }
             catch
