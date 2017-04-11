@@ -39,6 +39,11 @@ namespace VsoBot.Vso
                 {
                     return (await this.authService.GetCreds(activity)).Token;            
                 }
+
+                if (activity.Text.Equals("Hi", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    return BotReplyConstants.DidNotUnderstand;
+                }
             }
 
             return BotReplyConstants.DidNotUnderstand;
